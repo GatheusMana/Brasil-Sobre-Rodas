@@ -1,0 +1,176 @@
+2
+78
+Boa Vista
+Cararaí
+Rorainópolis
+Manaus
+Itacoatiara
+Parintins
+Santarém
+Laranjal do Jari
+Belém
+Marabá
+Macapá
+Oiapoque
+São Luís
+Imperatriz
+Caxias
+Araguaína
+Palmas
+Gurupi
+Brasíia
+Parnaíba
+Teresina
+Sobral
+Picos
+Fortaleza
+Juazeiro do Norte
+Mossoró
+Patos
+Campina Grande
+Caruaru
+Natal
+João Pessoa
+Caicó
+Recife
+Maceió
+Arapiraca
+Aracaju
+Delmiro Gouveia
+Petrolina
+Salvador
+Feira de Santana
+Vitória da Conquista
+Brasília
+Linhares
+Cachoeiro de Itapemirim
+Campos dos Goytacazes
+Rio de Janeiro
+Juiz de Fora
+Volta Redonda
+Belo Horizonte
+Uberlândia
+Rio Verde
+Três Lagoas
+Goiânia
+Luziânia
+Rondonópolis
+Várzea Grande
+Cuiabá
+Ji-Paraná
+Ariquemes
+Porto Velho
+Rio Branco
+Sena Madureira
+Cruzeiro do Sul
+São Paulo
+Campinas
+São José do Rio Preto
+Londrina
+Campo Grande
+Dourados
+Cascavél
+Curitiba
+Joinville
+Chapecó
+Florianópolis
+Caxias do Sul
+Porto Alegre
+Vila Princesa
+Vitória
+95
+Boa Vista;121;Cararaí
+Cararaí;124;Rorainópolis
+Rorainópolis;450;Manaus
+Manaus;175;Itacoatiara
+Itacoatiara;197;Parintins
+Parintins;220;Santarém
+Santarém;300;Laranjal do Jari
+Santarém;695;Belém
+Santarém;770;Marabá
+Laranjal do Jari;265;Macapá
+Laranjal do Jari;530;Oiapoque
+Belém;500;Marabá
+Belém;480;São Luís
+Marabá;180;Imperatriz
+Macapá;500;Oiapoque
+São Luís;480;Imperatriz
+São Luís;280;Parnaíba
+Imperatriz;460;Caxias
+Imperatriz;200;Araguaína
+Caxias;280;Parnaíba
+Caxias;100;Teresina
+Araguaína;350;Palmas
+Palmas;182;Gurupi
+Gurupi;470;Brasíia
+Parnaíba;264;Teresina
+Parnaíba;180;Sobral
+Teresina;262;Picos
+Sobral;230;Fortaleza
+Fortaleza;500;Juazeiro do Norte
+Fortaleza;200;Mossoró
+Juazeiro do Norte;380;Patos
+Mossoró;280;Natal
+Patos;190;Campina Grande
+Patos;180;Caruaru
+Campina Grande;150;Caicó
+Campina Grande;125;João Pessoa
+Campina Grande;140;Recife
+Caruaru;130;Recife
+Caruaru;190;Arapiraca
+Caruaru;590;Petrolina
+Natal;150;João Pessoa
+Natal;280;Caicó
+João Pessoa;100;Recife
+Recife;200;Maceió
+Maceió;130;Arapiraca
+Maceió;200;Aracaju
+Arapiraca;200;Delmiro Gouveia
+Arapiraca;140;Aracaju
+Aracaju;270;Salvador
+Delmiro Gouveia;270;Petrolina
+Salvador;100;Feira de Santana
+Feira de Santana;354;Vitória da Conquista
+Vitória da Conquista;760;Brasília
+Vitória da Conquista;590;Linhares
+Brasília;340;Uberlândia
+Brasília;50;Luziânia
+Linhares;200;Vitória
+Cachoeiro de Itapemirim;100;Campos dos Goytacazes
+Cachoeiro de Itapemirim;100;Vitória
+Campos dos Goytacazes;280;Rio de Janeiro
+Rio de Janeiro;130;Juiz de Fora
+Rio de Janeiro;120;Volta Redonda
+Juiz de Fora;270;Belo Horizonte
+Volta Redonda;280;São Paulo
+Belo Horizonte;540;Uberlândia
+Uberlândia;250;Rio Verde
+Uberlândia;415;Três Lagoas
+Rio Verde;230;Goiânia
+Três Lagoas;240;São José do Rio Preto
+Três Lagoas;290;Londrina
+Três Lagoas;300;Campo Grande
+Três Lagoas;360;Dourados
+Goiânia;190;Luziânia
+Goiânia;560;Rondonópolis
+Rondonópolis;180;Várzea Grande
+Rondonópolis;190;Cuiabá
+Rondonópolis;450;Campo Grande
+Cuiabá;830;Ji-Paraná
+Ji-Paraná;316;Ariquemes
+Ariquemes;150;Porto Velho
+Porto Velho;450;Rio Branco
+Rio Branco;134;Sena Madureira
+Sena Madureira;472;Cruzeiro do Sul
+São Paulo;100;Campinas
+São Paulo;333;Curitiba
+Campinas;360;São José do Rio Preto
+Dourados;330;Cascavél
+Cascavél;260;Chapecó
+Curitiba;160;Joinville
+Joinville;580;Chapecó
+Joinville;180;Florianópolis
+Chapecó;530;Florianópolis
+Chapecó;260;Caxias do Sul
+Caxias do Sul;130;Porto Alegre
+Porto Alegre;200;Vila Princesa
