@@ -1,3 +1,4 @@
+import heapq
 tipos_grafo = {
 '0':  "grafo não orientado sem peso",
 '1':  "grafo não orientado com peso no vértice",
@@ -173,3 +174,66 @@ class Grafo:
 
         except Exception as e:
             print(f"Erro ao gravar o arquivo: {e}")
+
+    def dijkstra(self, inicio_nome, fim_nome):
+        # Busca os objetos Cidade
+        inicio = self.busca_cidade(Cidade(inicio_nome))
+        fim = self.busca_cidade(Cidade(fim_nome))
+
+        if not inicio or not fim:
+            print("Uma ou ambas as cidades não foram encontradas no grafo.")
+            return [], float('inf')
+
+        # Inicializa distâncias e predecessores
+        distancias = {cidade: float('inf') for cidade in self.cidades}
+        predecessores = {cidade: None for cidade in self.cidades}
+        distancias[inicio] = 0
+
+        # Fila de prioridade: (distância, nome da cidade)
+        fila = [(0, inicio.nome)]  # Usamos o nome da cidade aqui
+
+        visitadas = set()
+
+        while fila:
+            distancia_atual, nome_atual = heapq.heappop(fila)
+            cidade_atual = self.busca_cidade(Cidade(nome_atual))
+
+            if cidade_atual in visitadas:
+                continue
+
+            visitadas.add(cidade_atual)
+
+            if cidade_atual == fim:
+                break
+
+            for rota in cidade_atual.rotas:
+                vizinho = rota.destino
+                nova_distancia = distancia_atual + int(rota.distancia)
+
+                if nova_distancia < distancias[vizinho]:
+                    distancias[vizinho] = nova_distancia
+                    predecessores[vizinho] = cidade_atual
+                    heapq.heappush(fila, (nova_distancia, vizinho.nome))  # Usamos o nome novamente
+
+        # Reconstrói o caminho
+        caminho = []
+        atual = fim
+        if distancias[atual] == float('inf'):
+            return [], float('inf')  # Caminho não existe
+
+        while atual:
+            caminho.insert(0, atual.nome)
+            atual = predecessores[atual]
+
+        return caminho, distancias[fim]
+
+    def exibir_menor_caminho(self, inicio, fim):
+        caminho, distancia = self.dijkstra(inicio, fim)
+        if not caminho:
+            print(f"\nNão há caminho entre '{inicio}' e '{fim}'.")
+        elif distancia == float('inf'):
+            print(f"\n'{fim}' não é alcançável a partir de '{inicio}'.")
+        else:
+            print(f"\nMenor caminho de '{inicio}' até '{fim}':")
+            print(" → ".join(caminho))
+            print(f"Distância total: {distancia} km")
