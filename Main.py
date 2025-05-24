@@ -64,6 +64,15 @@ def exibir_grafo():
     else:
         print("Grafo ainda não foi criado!")
 
+def encontrar_menor_caminho():
+    if grafo != None:
+        cidade_inicio = input("Digite a cidade de início: ").strip()
+        cidade_fim = input("Digite a cidade de destino: ").strip()
+
+        grafo.exibir_menor_caminho(cidade_inicio, cidade_fim)
+    else:
+        print("Grafo ainda não foi criado!")
+
 def menu():
     while True:
         print("Bem vindo ao Brasil sobre Trilhos")
@@ -74,7 +83,8 @@ def menu():
         print("5 - Remover cidade (vértice)")
         print("6 - Remover rota (aresta)")
         print("7 - Mostrar grafo e sua conexidade")
-        print("8 - Encerrar")
+        print("8 - Encontrar menor caminho entre duas cidades")
+        print("9 - Encerrar")
         
         opc = input("Digite a opção desejada:").strip()
         if opc == '1':
@@ -92,6 +102,8 @@ def menu():
         elif opc == '7':
             exibir_grafo()
         elif opc == '8':
+            encontrar_menor_caminho()
+        elif opc == '9':
             print("Programa encerrando...")
             return
         else:
