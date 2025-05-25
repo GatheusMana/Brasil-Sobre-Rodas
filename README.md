@@ -12,7 +12,7 @@
 
 Universidade Presbiteriana Mackenzie  
 Disciplina: Teoria dos Grafos  
-Professor: [Nome do Professor]  
+Professor: André Rodrigues de Oliveira  
 Ano: 2025
 
 ---
