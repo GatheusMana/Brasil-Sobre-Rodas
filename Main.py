@@ -117,4 +117,6 @@ def menu():
             return
         else:
             print("Opção inválida! Digite novamente para continuar")
-menu()
+
+if __name__ == "__main__":
+    menu()
