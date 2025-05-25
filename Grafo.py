@@ -76,7 +76,6 @@ class Grafo:
         self.total_rotas += 1
         print(f"A rota {origem.nome} para {destino.nome} com {distancia} km foi inserida com sucesso!")
 
-
     def remover_rota(self, origem, destino):
         origem = self.busca_cidade(Cidade(origem))
         destino = self.busca_cidade(Cidade(destino))
@@ -106,6 +105,18 @@ class Grafo:
         if len(visitadas) == len(self.cidades): return "conexo"
         return "não conexo"
 
+    def eh_euleriano(self):
+        if self.eh_conexo() != "conexo":
+            return False
+
+        vertices_impares = 0
+        for cidade in self.cidades:
+            grau = len(cidade.rotas)
+            if grau % 2 != 0:
+                vertices_impares += 1
+
+        return vertices_impares == 0
+
     def exibir(self):
         print(f"\nGrafo {self.eh_conexo()} do tipo {self.tipo} - {tipos_grafo[self.tipo]}.\nCom {self.total_cidades} cidades e {self.total_rotas} rotas:")
         for cidade in self.cidades:
@@ -113,6 +124,23 @@ class Grafo:
             for rota in cidade.rotas:
                 print(f"  -> {rota.destino.nome} ({rota.distancia} km)")
         print("\nFim da impressão do grafo.")
+
+    def exibir_caracteristicas(self):
+        print("\n=== Características do Grafo ===")
+        
+        # Verifica se é conexo
+        conexo = self.eh_conexo()
+        if conexo == "conexo":
+            print("O grafo é CONEXO: Todas as cidades estão interligadas.")
+        else:
+            print("O grafo NÃO é conexo: Existem cidades isoladas ou desconectadas.")
+
+        # Verifica se é euleriano
+        euleriano = self.eh_euleriano()
+        if euleriano:
+            print("O grafo é EULERIANO: É possível percorrer todas as rotas sem repetição.")
+        else:
+            print("O grafo NÃO é euleriano: Não é possível percorrer todas as rotas sem repetição.")
 
     def ler_arquivo(self):
         arquivo = open("grafo.txt", "r", encoding='utf-8')
