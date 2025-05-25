@@ -64,6 +64,12 @@ def exibir_grafo():
     else:
         print("Grafo ainda não foi criado!")
 
+def exibir_caracteristicas_grafo():
+    if grafo != None:
+        grafo.exibir_caracteristicas()
+    else:
+        print("Grafo ainda não foi criado!")
+
 def encontrar_menor_caminho():
     if grafo != None:
         cidade_inicio = input("Digite a cidade de início: ").strip()
@@ -82,9 +88,10 @@ def menu():
         print("4 - Inserir rota (aresta)")
         print("5 - Remover cidade (vértice)")
         print("6 - Remover rota (aresta)")
-        print("7 - Mostrar grafo e sua conexidade")
-        print("8 - Encontrar menor caminho entre duas cidades")
-        print("9 - Encerrar")
+        print("7 - Exibir grafo")
+        print("8 - Exibir características do grafo")
+        print("9 - Encontrar menor caminho entre duas cidades")
+        print("10 - Encerrar")
         
         opc = input("Digite a opção desejada:").strip()
         if opc == '1':
@@ -102,8 +109,10 @@ def menu():
         elif opc == '7':
             exibir_grafo()
         elif opc == '8':
-            encontrar_menor_caminho()
+            exibir_caracteristicas_grafo()
         elif opc == '9':
+            encontrar_menor_caminho()
+        elif opc == '10':
             print("Programa encerrando...")
             return
         else:
