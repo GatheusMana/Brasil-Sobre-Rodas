@@ -132,7 +132,7 @@ Este projeto contempla os seguintes ODS da Agenda 2030 da ONU:
 ### Passos:
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/Brasil-Sobre-Trilhos.git
+   git clone https://github.com/GatheusMana/Brasil-Sobre-Trilhos.git
    ```
 2. Execute o programa:
    ```bash
