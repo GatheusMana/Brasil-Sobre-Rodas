@@ -10,7 +10,6 @@ tipos_grafo = {
 '7':  "grafo orientado com peso nos vértices e arestas"
 }
 
-
 class Rota:
     def __init__(self, origem, destino, distancia):
         self.origem = origem
@@ -102,8 +101,7 @@ class Grafo:
         dfs(self.cidades[0])
 
         # Se todas as cidades foram visitadas, é conexo
-        if len(visitadas) == len(self.cidades): return "conexo"
-        return "não conexo"
+        return "conexo" if len(visitadas) == len(self.cidades) else "não conexo"
 
     def eh_euleriano(self):
         if self.eh_conexo() != "conexo":
@@ -118,7 +116,7 @@ class Grafo:
         return vertices_impares == 0
 
     def exibir(self):
-        print(f"\nGrafo {self.eh_conexo()} do tipo {self.tipo} - {tipos_grafo[self.tipo]}.\nCom {self.total_cidades} cidades e {self.total_rotas} rotas:")
+        print("=== Grafo ===")
         for cidade in self.cidades:
             print(f"\n{cidade.nome} está ligada a:")
             for rota in cidade.rotas:
@@ -126,50 +124,53 @@ class Grafo:
         print("\nFim da impressão do grafo.")
 
     def exibir_caracteristicas(self):
-        print("\n=== Características do Grafo ===")
+        print("=== Características do Grafo ===\n")
         
+        print(f"Tipo do grafo: {tipos_grafo[self.tipo]}")
         # Verifica se é conexo
         conexo = self.eh_conexo()
         if conexo == "conexo":
-            print("O grafo é CONEXO: Todas as cidades estão interligadas.")
+            print("O grafo é conexo: Todas as cidades estão interligadas.")
         else:
-            print("O grafo NÃO é conexo: Existem cidades isoladas ou desconectadas.")
+            print("O grafo não é conexo: Existem cidades isoladas ou desconectadas.")
 
         # Verifica se é euleriano
         euleriano = self.eh_euleriano()
         if euleriano:
-            print("O grafo é EULERIANO: É possível percorrer todas as rotas sem repetição.")
+            print("O grafo é euleriano: É possível percorrer todas as rotas sem repetição.")
         else:
-            print("O grafo NÃO é euleriano: Não é possível percorrer todas as rotas sem repetição.")
+            print("O grafo não é euleriano: Não é possível percorrer todas as rotas sem repetição.")
 
     def ler_arquivo(self):
-        arquivo = open("grafo.txt", "r", encoding='utf-8')
+        try:
+            with open("grafo.txt", "r", encoding='utf-8') as arquivo:
         
-        # Recebendo e atribuindo o tipo do grafo conforme padrão do arquivo
-        tipoGrafo = arquivo.readline().strip()
-        self.tipo = tipoGrafo
+                # Recebendo e atribuindo o tipo do grafo conforme padrão do arquivo
+                tipoGrafo = arquivo.readline().strip()
+                self.tipo = tipoGrafo
 
-        # Recebendo e atribuindo quantidade de cidades
-        total_cidades = int(arquivo.readline().strip())
-        # Recebendo as cidades do arquivo
-        for i in range(total_cidades):
-            cidade = arquivo.readline().strip()
-            self.adicionar_cidade(cidade)
+                # Recebendo e atribuindo quantidade de cidades
+                total_cidades = int(arquivo.readline().strip())
+                # Recebendo as cidades do arquivo
+                for i in range(total_cidades):
+                    cidade = arquivo.readline().strip()
+                    self.adicionar_cidade(cidade)
 
-        # Recebendo e atribuindo quantidade de rotas
-        total_rotas = int(arquivo.readline().strip())
-        # Recebendo as rotas do arquivo
-        for i in range(total_rotas):
-            linha = arquivo.readline().strip()
-            dados = linha.split(";")
-            origem, distancia, destino = dados[0].strip(), int(dados[1]), dados[2].strip()
-            self.inserir_rota(origem, destino, distancia)
-        
-        # Fechando o arquivo
-        arquivo.close()
-        
+                # Recebendo e atribuindo quantidade de rotas
+                total_rotas = int(arquivo.readline().strip())
+                # Recebendo as rotas do arquivo
+                for i in range(total_rotas):
+                    linha = arquivo.readline().strip()
+                    dados = linha.split(";")
+                    origem, distancia, destino = dados[0].strip(), int(dados[1]), dados[2].strip()
+                    self.inserir_rota(origem, destino, distancia)
+                
+                # Fechando o arquivo
+                arquivo.close()
+        except Exception as e:
+            print(f"Erro ao ler o arquivo: {e}")
+    
     def gravar_em_arquivo(self):
-
         try:
             with open("grafo.txt", "w", encoding="utf-8") as arquivo:
 
