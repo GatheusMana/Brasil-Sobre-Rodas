@@ -6,9 +6,9 @@
 
 ## 📌 Autores
 
-- Bruno Burghi Machado – RM 10419527  
-- Lauralice de Souza Silva – RM 10416542  
-- Matheus Nascimento Gana – RM 10417400  
+- Bruno Burghi Machado
+- Lauralice de Souza Silva
+- Matheus Nascimento Gana
 
 Universidade Presbiteriana Mackenzie  
 Disciplina: Teoria dos Grafos  
